@@ -11,7 +11,7 @@ export const PurchaseModel = database.define("tb_purchase", {
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4
     },
-    clientId:{
+    creatorId:{
         type: DataTypes.UUID,
         references: {
             model: ClientModel,
@@ -19,7 +19,7 @@ export const PurchaseModel = database.define("tb_purchase", {
         },
         allowNull: false
     },
-    productId:{
+    creatorProductId:{
         type: DataTypes.UUID,
         references:{
             model: ProductModel,

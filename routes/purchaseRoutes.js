@@ -7,7 +7,7 @@ routerPurchase.post("/createPurchase", async(req, res) => {
     return await createPurchase(req, res)
 })
 
-routerPurchase.delete("/delPurchase/:id", async(req, res) => {
+routerPurchase.delete("/delPurchase/:id/:clientId", async(req, res) => {
     return await deletePurchase(req, res)
 })
 

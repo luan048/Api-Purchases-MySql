@@ -25,15 +25,18 @@ export class PurchaseServices{
         }
     }
 
-    async deletePurchase(purchaseId, productId, clientId, password) {
+    async deletePurchase(purchaseId, clientId) {
         try {
             await database.sync()
             const purchase = await PurchaseModel.findByPk(purchaseId)
-            const product = await ProductModel.findByPk(productId)
-            const client = await ClientModel.findByPk(clientId)
 
-            if(purchase.creatorId!==clientId || product.creatorProductId!==clientId){return{statusValue: 404, message: "Error, only the creator can delete"}}
-            else if (client.password!== password){return {statusValue: 404, message: 'Password Error'}}
+            if (!purchase) {
+                return { statusValue: 404, message: "Purchase not found" }
+            }
+
+            if(purchase.creatorId!==clientId) {
+                return{statusValue: 404, message: "Error, only the creator can delete"}
+            }
             
             await purchase.destroy()
 

@@ -2,14 +2,14 @@ import { ClientModel } from '../models/clientModel.js'
 import { database } from '../database/db.js'
 
 export class ClientServices{
-    async createClient(clietname, password){
+    async createClient(clientname, password){
         try{
             await database.sync()
-            const newClient = await ClientModel.create({clietname, password})
+            const newClient = await ClientModel.create({clientname, password})
             return{
-                statusValue: 200,
+                clientId: newClient.id,
                 message: 'Created Sucessfully',
-                clientId: newClient.id 
+                statusValue: 200 
             }
         }
 

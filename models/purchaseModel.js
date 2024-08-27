@@ -31,4 +31,6 @@ export const PurchaseModel = database.define("tb_purchase", {
         type: DataTypes.INTEGER,
         allowNull: false
     }
+}, {
+    timestamps: false
 })

@@ -13,7 +13,7 @@ routerProduct.get("/getAllProducts", getAllProducts, async(req, res) => {
     return await getAllProducts(req, res)
 })
 
-routerProduct.get("/getProduct", instanceProductService.getProductValidation, async(req, res) => {
+routerProduct.get("/getProduct/:id", instanceProductService.getProductValidation, async(req, res) => {
     return await getProduct(req, res)
 })
 

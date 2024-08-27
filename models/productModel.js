@@ -16,4 +16,6 @@ export const ProductModel = database.define("tb_product", {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     }
+}, {
+    timestamps: false
 })

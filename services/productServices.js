@@ -44,7 +44,7 @@ export class ProductServices{
 
     async getProduct(id) {
         try {
-            const product = await UserModel.findByPk(id)
+            const product = await ProductModel.findByPk(id)
             if (product) {
                 return {
                     statusValue: 200,
@@ -73,7 +73,7 @@ export class ProductServices{
     async updatePrice(id, newPrice) {
         try {
             await database.sync()
-            const product = await UserModel.findByPk(id)
+            const product = await ProductModel.findByPk(id)
             product.update({price: newPrice})
             return {
                 statusValue: 200,
@@ -86,10 +86,10 @@ export class ProductServices{
         }
     }
 
-    async delUser(id) {
+    async deleteProduct(id) {
         try {
             await database.sync()
-            const product = await UserModel.findByPk(id)
+            const product = await ProductModel.findByPk(id)
             product.destroy()
             return {
                 statusValue: 200,

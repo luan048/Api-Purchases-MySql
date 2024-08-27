@@ -18,7 +18,7 @@ export async function getProduct(req, res) {
 
     try {
         const resultado = await instanceUsersService.getProduct(id)
-        if(resultado.product) {
+        if(resultado) {
             return res.status(200).json(resultado)
         }
         else {

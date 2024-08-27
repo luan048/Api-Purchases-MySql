@@ -17,7 +17,7 @@ export async function getClient(req, res) {
     const {id} = req.params
     try {
         const resultado = await instanceUsersService.getClient(id)
-        if(resultado.client) {
+        if(resultado) {
             return res.status(200).json(resultado)
         }
 

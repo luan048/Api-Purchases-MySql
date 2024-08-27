@@ -15,7 +15,7 @@ const database = new Sequelize(
 
 export async function tryToConnect() {
     try {
-        database.sync({force:true})
+        database.sync({alter:true})
         await database.authenticate()
         console.log('Connection Established')
     }

@@ -34,8 +34,8 @@ export async function getProduct(req, res) {
 
 export async function updatePassword(req, res) {
     const {id} = req.params
-    const {newPassword} = req.body
-    await instanceUsersService.updatePassword(id, newPassword)
+    const {newPrice} = req.body
+    await instanceUsersService.updatePassword(id, newPrice)
     return res.status(200).json({message: 'Sucessfully'})
 }
 

@@ -32,7 +32,7 @@ export class ProductValidator {
         next()
     }
 
-    async updatePasswordValidation(req, res, next) {
+    async updatePriceValidation(req, res, next) {
         const {id} = req.params
         const {newPrice} = req.body
         const fields = ["newPrice"]

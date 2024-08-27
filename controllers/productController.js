@@ -32,10 +32,10 @@ export async function getProduct(req, res) {
     }
 }
 
-export async function updatePassword(req, res) {
+export async function updatePrice(req, res) {
     const {id} = req.params
     const {newPrice} = req.body
-    await instanceUsersService.updatePassword(id, newPrice)
+    await instanceUsersService.updatePrice(id, newPrice)
     return res.status(200).json({message: 'Sucessfully'})
 }
 

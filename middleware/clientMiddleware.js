@@ -52,7 +52,7 @@ export class ClientValidator {
     }
 
     async deleteClientValidation(req, res, next) {
-        const {id} = req.body
+        const {id} = req.params
         const errors = []
 
         if(!id) {
